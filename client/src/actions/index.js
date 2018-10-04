@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const url = 'https://dry-waters-53761.herokuapp.com';
-const url = 'http://localhost:8080';
+const url = 'http://localhost:3001';
 
 export function getBooks(limit = 10, start = 0, order = 'asc', list = '') {
   const request = axios
@@ -20,25 +20,23 @@ export function getBooks(limit = 10, start = 0, order = 'asc', list = '') {
 }
 
 export function getBookWithReviewer(id) {
-  const request = axios.get(`${url}/api/getBook?id=${id}`);
+  const request = axios.get(`/api/getBook?id=${id}`);
 
   return dispatch => {
     request.then(({ data }) => {
       let book = data;
 
-      axios
-        .get(`${url}/api/getReviewer?id=${book.ownerId}`)
-        .then(({ data }) => {
-          let response = {
-            book,
-            reviewer: data,
-          };
+      axios.get(`/api/getReviewer?id=${book.ownerId}`).then(({ data }) => {
+        let response = {
+          book,
+          reviewer: data,
+        };
 
-          dispatch({
-            type: 'GET_BOOK_W_REVIEWER',
-            payload: response,
-          });
+        dispatch({
+          type: 'GET_BOOK_W_REVIEWER',
+          payload: response,
         });
+      });
     });
   };
 }
@@ -54,9 +52,7 @@ export function clearBookWithReviewer() {
 }
 
 export function addBook(book) {
-  const request = axios
-    .post(`${url}/api/book`, book)
-    .then(response => response.data);
+  const request = axios.post(`/api/book`, book).then(response => response.data);
 
   return {
     type: 'ADD_BOOK',
@@ -72,7 +68,7 @@ export function clearNewBook() {
 
 export function getUserPosts(userId) {
   const request = axios
-    .get(`${url}/api/user_posts?user=${userId}`)
+    .get(`/api/user_posts?user=${userId}`)
     .then(response => response.data);
 
   return {
@@ -83,7 +79,7 @@ export function getUserPosts(userId) {
 
 export function getBook(id) {
   const request = axios
-    .get(`${url}/api/getBook?id=${id}`)
+    .get(`/api/getBook?id=${id}`)
     .then(response => response.data);
 
   return {
@@ -94,7 +90,7 @@ export function getBook(id) {
 
 export function updateBook(data) {
   const request = axios
-    .post(`${url}/api/book_update`, data)
+    .post(`/api/book_update`, data)
     .then(response => response.data);
 
   return {
@@ -105,7 +101,7 @@ export function updateBook(data) {
 
 export function deleteBook(id) {
   const request = axios
-    .delete(`${url}/api/delete_book?id=${id}`)
+    .delete(`/api/delete_book?id=${id}`)
     .then(response => response.data);
 
   return {
@@ -129,7 +125,7 @@ export function clearBook() {
 
 export function loginUser({ email, password }) {
   const request = axios
-    .post(`${url}/api/login`, { email, password })
+    .post(`/api/login`, { email, password })
     .then(response => response.data);
 
   return {
@@ -139,7 +135,7 @@ export function loginUser({ email, password }) {
 }
 
 export function auth() {
-  const request = axios.get(`${url}/api/auth`).then(response => response.data);
+  const request = axios.get(`/api/auth`).then(response => response.data);
 
   return {
     type: 'USER_AUTH',
@@ -148,7 +144,7 @@ export function auth() {
 }
 
 export function getUsers() {
-  const request = axios.get(`${url}/api/users`).then(response => response.data);
+  const request = axios.get(`/api/users`).then(response => response.data);
 
   return {
     type: 'GET_USER',
@@ -157,7 +153,7 @@ export function getUsers() {
 }
 
 export function userRegister(user, userList) {
-  const request = axios.post(`${url}/api/register`, user);
+  const request = axios.post(`/api/register`, user);
 
   return dispatch => {
     request.then(({ data }) => {
