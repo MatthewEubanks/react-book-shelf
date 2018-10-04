@@ -21,5 +21,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": {
+    "/api/*": {
+      "target": "https://dry-waters-53761.herokuapp.com",
+      "changeOrigin": true
+    }
+  },
+  "homepage": "https://dry-waters-53761.herokuapp.com"
 }
