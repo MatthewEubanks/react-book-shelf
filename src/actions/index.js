@@ -143,6 +143,8 @@ export function loginUser({ email, password }) {
 
   const request = axios
     .post(`${url}/api/login`, {
+      email,
+      password,
       headers: { crossDomain: true, 'Content-Type': 'application/json' },
     })
     .then(response => response.data);
