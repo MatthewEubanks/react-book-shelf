@@ -142,7 +142,7 @@ export function loginUser({ email, password }) {
   // }).then(response => response.data);
 
   const request = axios
-    .get(url, {
+    .post(`${url}/api/login`, {
       headers: { crossDomain: true, 'Content-Type': 'application/json' },
     })
     .then(response => response.data);
@@ -157,7 +157,14 @@ export function loginUser({ email, password }) {
 }
 
 export function auth() {
-  const request = axios.get(`${url}/api/auth`).then(response => response.data);
+  const request = axios
+    .get(`${url}/api/auth`, {
+      headers: {
+        crossDomain: true,
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => response.data);
 
   return {
     type: 'USER_AUTH',
