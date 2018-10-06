@@ -130,9 +130,20 @@ export function clearBook() {
 /*========= USER ===========*/
 
 export function loginUser({ email, password }) {
-  const request = axios
-    .post(`${url}/api/login`, { email, password })
-    .then(response => response.data);
+  const request = axios(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    },
+    withCredentials: true,
+    credentials: 'same-origin',
+  }).then(response => response.data);
+
+  // const request = axios
+  //   .post(`${url}/api/login`, { email, password })
+  //   .then(response => response.data);
 
   return {
     type: 'USER_LOGIN',
