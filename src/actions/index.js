@@ -145,6 +145,7 @@ export function loginUser({ email, password }) {
     .post(`${url}/api/login`, {
       email,
       password,
+      withCredentials: true,
       headers: { crossDomain: true, 'Content-Type': 'application/json' },
     })
     .then(response => response.data);
@@ -161,6 +162,7 @@ export function loginUser({ email, password }) {
 export function auth() {
   const request = axios
     .get(`${url}/api/auth`, {
+      withCredentials: true,
       headers: {
         crossDomain: true,
         'Content-Type': 'application/json',
