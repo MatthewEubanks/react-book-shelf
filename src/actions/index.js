@@ -160,7 +160,7 @@ export function loginUser({ email, password }) {
 }
 
 export function auth() {
-  const request = axios.get('/api/auth').then(response => response.data);
+  const request = axios.get(`${url}/api/auth`).then(response => response.data);
 
   return {
     type: 'USER_AUTH',
