@@ -2,11 +2,5 @@
   "root": "build/",
   "routes": {
     "/**": "index.html"
-  },
-  "proxies": {
-    "/api/*": {
-      "target": "https://dry-waters-53761.herokuapp.com",
-      "changeOrigin": true
-    }
   }
 }

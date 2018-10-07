@@ -140,18 +140,18 @@ export function loginUser({ email, password }) {
   //   withCredentials: true,
   //   credentials: 'same-origin',
   // }).then(response => response.data);
-
-  // const request = axios
-  //   .post(`${url}/api/login`, {
-  //     email,
-  //     password,
-  //     withCredentials: true,
-  //     headers: { crossDomain: true, 'Content-Type': 'application/json' },
-  //   })
-  //   .then(response => response.data);
+  axios.defaults.withCredentials = true;
   const request = axios
-    .post(`${url}/api/login`, { email, password })
+    .post(`${url}/api/login`, {
+      email,
+      password,
+      withCredentials: true,
+      headers: { crossDomain: true, 'Content-Type': 'application/json' },
+    })
     .then(response => response.data);
+  // const request = axios
+  //   .post(`${url}/api/login`, { email, password })
+  //   .then(response => response.data);
 
   return {
     type: 'USER_LOGIN',
