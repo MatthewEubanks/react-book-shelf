@@ -31,7 +31,7 @@ class HomeContainer extends Component {
           <p>
             This Page is to review my favorite books and to get started just
             login using the side navigation. Once logged in you will see the
-            user profile annd there will be more options in the side navigation
+            user profile and there will be more options in the side navigation
             bar. Take a look and have fun.
           </p>
         </div>
