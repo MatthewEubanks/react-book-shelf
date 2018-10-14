@@ -13,12 +13,6 @@ a:visited,
 a:focus {
   color: black;
 }
-
-p {
-  width: 75%;
-  padding-left: 50px;
-  padding-right: 50px;
-}
 .red_tag {
   background: #f44336;
   color: #fff;

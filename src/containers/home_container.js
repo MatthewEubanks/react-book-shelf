@@ -27,7 +27,7 @@ class HomeContainer extends Component {
         <div className="loadmore" onClick={this.loadmore}>
           Load More
         </div>
-        <div>
+        <div className="rl_container">
           <p>
             This Page is to review my favorite books and to get started just
             login using the side navigation. Once logged in you will see the
