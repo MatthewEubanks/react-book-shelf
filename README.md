@@ -53,12 +53,14 @@ Mobile Application is Fully responsive:
 - mLab
 - bcrypt.js
 - Passport
-  ##Continuous Integration Testing
+
+## Continuous Integration Testing
+
 - Mocha
 - Chai
 - TravisCI
 
-##Deployed to
+## Deployed to
 
 - Heroku
 
