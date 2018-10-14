@@ -58,6 +58,15 @@ export class Login extends Component {
             {user.login ? <div>{user.login.message}</div> : null}
           </div>
         </form>
+        <div>
+          <p>
+            <bold>Demo User:</bold> demo@demo.com
+          </p>
+          <p>
+            <bold>Demo Password:</bold>
+            password
+          </p>
+        </div>
       </div>
     );
   }
