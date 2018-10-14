@@ -52,7 +52,6 @@ Mobile Application is Fully responsive:
 - Mongoose
 - mLab
 - bcrypt.js
-- Passport
 
 ## Continuous Integration Testing
 
