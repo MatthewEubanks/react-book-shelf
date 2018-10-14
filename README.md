@@ -55,8 +55,8 @@ Mobile Application is Fully responsive:
 
 ## Continuous Integration Testing
 
-- Mocha
-- Chai
+- Enzyme
+- Jest
 - TravisCI
 
 ## Deployed to
