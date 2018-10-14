@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getBookWithReviewer, clearBookWithReviewer } from '../../actions';
 
-class BookView extends Component {
+export class BookView extends Component {
   componentWillMount = () => {
     this.props.dispatch(getBookWithReviewer(this.props.match.params.id));
   };
