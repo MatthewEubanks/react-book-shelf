@@ -2,11 +2,11 @@
 
 The Book Shelf app allows users to post reviews for their favorite books. Anyone that navigates to the page can see all of the reviews and open an individual review for more information. Once loggged in users can add book reviews, edit book reviews, delete book reviews, and add users to be able to log in. I built this application because I am a big reader and wanted to let others see reviews of my favorite books.
 
-##Live Demo
+## Live Demo
 
 - [Live Demo](https://fast-forest-94723.herokuapp.com)
 
-##Screenshots
+## Screenshots
 
 Landing Page:
 ![image](https://user-images.githubusercontent.com/1865449/46921498-f0720c80-cfb0-11e8-961a-f3947113397d.png)
@@ -44,7 +44,7 @@ Mobile Application is Fully responsive:
 
 ## Back end
 
--[GitHub Repo](https://github.com/matteprg/book-shelf-api)
+- [GitHub Repo](https://github.com/matteprg/book-shelf-api)
 
 - Node.js
 - Express.js

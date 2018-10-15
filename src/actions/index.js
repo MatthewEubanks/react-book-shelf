@@ -130,16 +130,6 @@ export function clearBook() {
 /*========= USER ===========*/
 
 export function loginUser({ email, password }) {
-  // const request = axios(url, {
-  //   method: 'POST',
-  //   mode: 'no-cors',
-  //   headers: {
-  //     'Access-Control-Allow-Origin': '*',
-  //     'Content-Type': 'application/json',
-  //   },
-  //   withCredentials: true,
-  //   credentials: 'same-origin',
-  // }).then(response => response.data);
   axios.defaults.withCredentials = true;
   const request = axios
     .post(`${url}/api/login`, {
@@ -149,9 +139,6 @@ export function loginUser({ email, password }) {
       headers: { crossDomain: true, 'Content-Type': 'application/json' },
     })
     .then(response => response.data);
-  // const request = axios
-  //   .post(`${url}/api/login`, { email, password })
-  //   .then(response => response.data);
 
   return {
     type: 'USER_LOGIN',
